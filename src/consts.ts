@@ -10,7 +10,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const SEO_CONFIG = {
-  ogImage: "/hero-img.png",
+  ogImage: "/hero.svg",
   keywords: "blog, tech, programming",
 };
 

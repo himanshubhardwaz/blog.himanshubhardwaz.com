@@ -1,5 +1,41 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import BlogPost from "../layouts/BlogPost.astro";
 ---
 
-<Layout> About! </Layout>
+<BlogPost
+  id="about"
+  title="About blog.himanshubhardwaz.com"
+  description="A fast, text-focused, minimalist blog for sharing my thoughts and experiences."
+  date={new Date("March 14 2025")}
+  tags={[]}
+>
+  <div class="prose">
+    <p>
+      Welcome to my personal blog. This is a minimalist, fast-loading space
+      where I share my thoughts on software engineering, web development, and
+      technology.
+    </p>
+
+    <h2>About Me</h2>
+    <p>
+      I'm Himanshu Bhardwaz, a software engineer passionate about creating
+      clean, efficient, and user-friendly web applications. I focus primarily on
+      modern JavaScript frameworks and performance optimization.
+    </p>
+
+    <h2>About This Blog</h2>
+    <p>
+      This blog is built with <a href="https://astro.build">Astro</a>, inspired
+      by the minimalism of <a href="https://bearblog.dev/">Bear Blog</a>. It's
+      designed to be lightweight, accessible, and content-focused.
+    </p>
+
+    <h2>Connect With Me</h2>
+    <p>
+      You can reach me at <a href="mailto:connect@himanshubhardwaz.com"
+        >connect@himanshubhardwaz.com</a
+      > or find me on
+      <a href="https://github.com/himanshubhardwaz">GitHub</a>.
+    </p>
+  </div>
+</BlogPost>

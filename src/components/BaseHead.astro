@@ -21,10 +21,10 @@ const {
   structuredData,
 } = Astro.props;
 
-// todo
 const faviconURL = generateURL("/favicon.ico");
 const rssURL = generateURL("/rss.xml");
 const ogImageURL = image.startsWith("http") ? image : generateURL(image);
+const toggleThemeURL = generateURL("/toggle-theme.js");
 ---
 
 <!-- Global Metadata -->
@@ -74,3 +74,4 @@ const ogImageURL = image.startsWith("http") ? image : generateURL(image);
 }
 
 <ClientRouter />
+<script is:inline src={toggleThemeURL.toString()} async></script>

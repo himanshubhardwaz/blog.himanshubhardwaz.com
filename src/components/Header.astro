@@ -4,6 +4,7 @@ import { SITE_TITLE } from "../consts";
 import IconLink from "./IconLink.astro";
 import { generateURL } from "../util.ts";
 import { NAV_ITEMS, BLOG_CONFIG } from "../consts";
+import ThemeSwitcher from "./ThemeSwitcher.astro";
 ---
 
 <!-- TODO: THEME -->
@@ -28,6 +29,7 @@ import { NAV_ITEMS, BLOG_CONFIG } from "../consts";
           <IconLink name="Email" href={BLOG_CONFIG["email"]} label="Email" />
         )
       }
+      <ThemeSwitcher />
     </div>
   </nav>
 </header>

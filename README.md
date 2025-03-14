@@ -19,22 +19,6 @@ A minimalist, fast-loading blog built with Astro and MDX where I share my though
 - ✅ RSS feed support
 - ✅ Tag-based post categorization
 
-## Running Locally
-
-```bash
-# Clone the repository
-git clone https://github.com/himanshubhardwaz/blog.himanshubhardwaz.com.git
-
-# Navigate to directory
-cd blog.himanshubhardwaz.com
-
-# Install dependencies
-npm install
-
-# Start development server
-npm run dev
-```
-
 ## Why This Blog?
 
 This blog represents the latest evolution in my web development journey. My portfolio previously housed my blog content, but I've decided to separate concerns for the best experience. While going forward my main portfolio will use Go + HTMX for its server-driven approach, I've chosen Astro with MDX for my blog content to leverage its exceptional static site generation capabilities and type-safe content creation.

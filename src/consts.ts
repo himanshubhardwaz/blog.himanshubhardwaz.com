@@ -1,6 +1,6 @@
 export const SITE_TITLE = "blog.himanshubhardwaz.com";
 export const SITE_DESCRIPTION = "Welcome (. ❛ ᴗ ❛.)";
-export const COPYRIGHT = `© ${new Date().getFullYear()} PlainPage All Rights Reserved`;
+export const COPYRIGHT = `© ${new Date().getFullYear()} blog.himanshubhardwaz.com All Rights Reserved`;
 
 export const SOCIAL_LINKS = {
   Github: "https://github.com/himanshubhardwaz",

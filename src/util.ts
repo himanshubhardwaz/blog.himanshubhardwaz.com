@@ -20,3 +20,7 @@ export const trimSlash = (path: string) => {
   }
   return res;
 };
+
+export const pathEqual = (a: string, b: string) => {
+  return trimSlash(a) === trimSlash(b);
+};

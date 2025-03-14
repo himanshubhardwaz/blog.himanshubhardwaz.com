@@ -24,8 +24,8 @@ export const NAV_ITEMS = [
 export const BLOG_CONFIG = {
   locale: "en-us",
   profile: "https://github.com/himanshubhardwaz",
-  authorName: "Author Name",
-  email: "mailto:your-email@example.com",
+  authorName: "Himanshu Bhardwaz",
+  email: "mailto:connect@himanshubhardwaz.com",
   tags: {
     title: "Tags",
     description: "All the tags used in posts.",

@@ -2,6 +2,11 @@
 
 A minimalist, fast-loading blog built with Astro and MDX where I share my thoughts on software engineering, web development, and technology. Inspired by [Bear Blog](https://bearblog.dev)'s minimalist approach and rebuilt from scratch with Astro in just 4 hours.
 
+<img width="1450" alt="Lighthouse Score" src="https://github.com/user-attachments/assets/75cd7022-3a37-46e6-8bd9-325052146f15" />
+
+<img width="1466" alt="Website Screenshot" src="https://github.com/user-attachments/assets/f7dee8ca-ed99-4f94-97bc-2ca0f8c6b5d2" />
+
+
 ## Tech Stack
 
 - **Framework**: [Astro](https://astro.build)

@@ -5,7 +5,7 @@ import FormattedDate from "../../components/FormattedDate.astro";
 import { generateURL } from "../../util.ts";
 
 const posts = (await getCollection("blog", (post) => !post.data.hide)).sort(
-  (a, b) => b.data.pubDate.valueOf() - a.data.pubDate.valueOf()
+  (a, b) => b.data.date.valueOf() - a.data.date.valueOf()
 );
 ---
 

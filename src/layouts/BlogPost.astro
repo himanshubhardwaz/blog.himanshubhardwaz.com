@@ -5,10 +5,12 @@ import FormattedDate from "../components/FormattedDate.astro";
 import IconLink from "../components/IconLink.astro";
 import { generateURL } from "../util.ts";
 import { BLOG_CONFIG } from "../consts";
+import Tags from "../components/Tags.astro";
 
 type Props = CollectionEntry<"blog">["data"] & { id: string };
 
-const { id, title, description, date, updatedDate, heroImage } = Astro.props;
+const { id, title, description, date, updatedDate, heroImage, tags } =
+  Astro.props;
 
 const backLink = Astro.url.pathname.indexOf("/blog/") > -1;
 
@@ -70,7 +72,7 @@ const structuredData = {
         <hr />
       </div>
       <slot />
-      <!-- TODO <Tags /> -->
+      <Tags tags={tags} />
     </div>
   </article>
 </Layout>

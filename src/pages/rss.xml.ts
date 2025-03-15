@@ -14,7 +14,7 @@ export async function GET(context: APIContext) {
     items: blogs.map((post) => ({
       ...post.data,
       pubDate: post.data.date,
-      link: `/blog/${post.id}/`,
+      link: `/blog/${post.id.replace(/\.(mdx|md)$/, "")}/`,
     })),
     customData: `<language>en-us</language>`,
   });

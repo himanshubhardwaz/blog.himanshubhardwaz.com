@@ -5,6 +5,7 @@ import { render } from "astro:content";
 
 export async function getStaticPaths() {
   const posts = await getCollection("blog", (post) => !post.data.hide);
+
   return posts.map((post) => ({
     params: { slug: post.id.replace(/\.(mdx|md)$/, "") },
     props: post,
@@ -15,8 +16,18 @@ type Props = CollectionEntry<"blog">;
 
 const post = Astro.props;
 const { Content } = await render(post);
+
+// let heroImage = post.data.cover?.src;
+// if (heroImage && heroImage.startsWith("~/")) {
+//   heroImage = heroImage.replace("~/", "/src/");
+// }
 ---
 
-<BlogPost {...post.data} id={post.id}>
+<BlogPost
+  {...post.data}
+  id={post.id}
+  heroImage={post.data.cover?.src}
+  heroImageAlt={post.data.cover?.alt}
+>
   <Content />
 </BlogPost>

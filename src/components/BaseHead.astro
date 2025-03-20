@@ -1,4 +1,5 @@
 ---
+import { SEO } from "astro-seo";
 import { ClientRouter } from "astro:transitions";
 import "../styles/global.css";
 import { SITE_TITLE, SEO_CONFIG } from "../consts";
@@ -23,7 +24,6 @@ const {
 
 const faviconURL = generateURL("/favicon.ico");
 const rssURL = generateURL("/rss.xml");
-const ogImageURL = image.startsWith("http") ? image : generateURL(image);
 const toggleThemeURL = generateURL("/toggle-theme.js");
 ---
 
@@ -41,30 +41,38 @@ const toggleThemeURL = generateURL("/toggle-theme.js");
   href={rssURL}
 />
 
-<!-- Canonical URL -->
-<link rel="canonical" href={canonicalURL} />
-
-<!-- Primary Meta Tags -->
-<title>{title}</title>
-<meta name="title" content={title} />
-<meta name="description" content={description} />
-<meta name="keywords" content={keywords} />
-
-<!-- TODO Open Graph / Facebook -->
-<meta property="og:type" content="website" />
-<meta property="og:url" content={Astro.url} />
-<meta property="og:title" content={title} />
-<meta property="og:description" content={description} />
-<meta property="og:image" content={ogImageURL} />
-
-<!-- Twitter -->
-<meta property="twitter:card" content="summary_large_image" />
-<meta property="twitter:url" content={Astro.url} />
-<meta property="twitter:title" content={title} />
-<meta property="twitter:description" content={description} />
-<meta property="twitter:image" content={ogImageURL} />
-
-<meta name="robots" content="index, follow" />
+<SEO
+  title={title}
+  description={description}
+  canonical={canonicalURL.href}
+  openGraph={{
+    basic: {
+      title: title,
+      type: "website",
+      image: image,
+      url: canonicalURL.href,
+    },
+    optional: {
+      description: description,
+    },
+    image: {
+      alt: title,
+    },
+  }}
+  twitter={{
+    card: "summary_large_image",
+    title: title,
+    description: description,
+    image: image,
+  }}
+  extend={{
+    meta: [
+      { name: "keywords", content: keywords },
+      { name: "robots", content: "index, follow" },
+    ],
+    link: [{ rel: "canonical", href: canonicalURL.href }],
+  }}
+/>
 
 <!-- Google JSON-LD Structured data -->
 {

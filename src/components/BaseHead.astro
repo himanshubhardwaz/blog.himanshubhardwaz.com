@@ -18,9 +18,11 @@ const {
   title,
   description,
   keywords = SEO_CONFIG.keywords,
-  image = SEO_CONFIG.ogImage,
+  image = `${Astro.url.origin}${SEO_CONFIG.ogImage}`,
   structuredData,
 } = Astro.props;
+
+console.log({ image });
 
 const faviconURL = generateURL("/favicon.ico");
 const rssURL = generateURL("/rss.xml");

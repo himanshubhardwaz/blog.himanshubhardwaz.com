@@ -18,11 +18,9 @@ const {
   title,
   description,
   keywords = SEO_CONFIG.keywords,
-  image = `${Astro.url.origin}${SEO_CONFIG.ogImage}`,
+  image = generateURL("/hero.webp") as string,
   structuredData,
 } = Astro.props;
-
-console.log({ image });
 
 const faviconURL = generateURL("/favicon.ico");
 const rssURL = generateURL("/rss.xml");

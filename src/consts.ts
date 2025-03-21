@@ -1,5 +1,6 @@
-export const SITE_TITLE = "blog.himanshubhardwaz.com";
-export const SITE_DESCRIPTION = "Welcome (. ❛ ᴗ ❛.)";
+export const SITE_TITLE = "Himanshu's Blog";
+export const SITE_DESCRIPTION =
+  "Welcome (. ❛ ᴗ ❛.). Explore tech, programming, and beyond with me! 🚀";
 export const COPYRIGHT = `© ${new Date().getFullYear()} blog.himanshubhardwaz.com All Rights Reserved`;
 
 export const SOCIAL_LINKS = {

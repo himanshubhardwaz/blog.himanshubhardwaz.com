@@ -11,7 +11,7 @@ export const SOCIAL_LINKS = {
 };
 
 export const SEO_CONFIG = {
-  ogImage: "/hero.webp",
+  ogImage: "/hero.png",
   keywords: "blog, tech, programming",
 };
 

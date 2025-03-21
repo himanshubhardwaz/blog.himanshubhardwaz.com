@@ -18,7 +18,7 @@ const {
   title,
   description,
   keywords = SEO_CONFIG.keywords,
-  image = generateURL("/hero.webp") as string,
+  image = generateURL(SEO_CONFIG.ogImage) as string,
   structuredData,
 } = Astro.props;
 

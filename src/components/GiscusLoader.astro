@@ -1,0 +1,41 @@
+<div id="giscus-container"></div>
+
+<script>
+  function loadGiscus() {
+    const script = document.createElement("script");
+    script.src = `https://giscus.app/client.js?v=${Date.now()}`;
+    script.setAttribute(
+      "data-repo",
+      "himanshubhardwaz/blog.himanshubhardwaz.com"
+    );
+    script.setAttribute("data-repo-id", "R_kgDOOIW5Ag");
+    script.setAttribute("data-category", "General");
+    script.setAttribute("data-category-id", "DIC_kwDOOIW5As4Cohdn");
+    script.setAttribute("data-mapping", "pathname");
+    script.setAttribute("data-strict", "0");
+    script.setAttribute("data-reactions-enabled", "1");
+    script.setAttribute("data-emit-metadata", "0");
+    script.setAttribute("data-input-position", "bottom");
+    script.setAttribute("data-theme", "dark");
+    script.setAttribute("data-lang", "en");
+    script.setAttribute("data-loading", "lazy");
+    script.setAttribute("crossorigin", "anonymous");
+
+    const container = document.getElementById("giscus-container");
+    if (container) {
+      container.innerHTML = "";
+      container.appendChild(script);
+    }
+  }
+
+  loadGiscus();
+
+  // Re-load on page navigation when using View Transitions
+  document.addEventListener("astro:page-load", loadGiscus);
+
+  // Cleanup on navigation away
+  document.addEventListener("astro:before-preparation", () => {
+    const container = document.getElementById("giscus-container");
+    if (container) container.innerHTML = "";
+  });
+</script>

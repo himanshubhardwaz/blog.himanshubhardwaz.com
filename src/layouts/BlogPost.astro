@@ -75,10 +75,33 @@ const structuredData = {
         <div class="description">{description}</div>
         <hr />
       </div>
+
       <slot />
       <Tags tags={tags} />
     </div>
   </article>
+  {id !== "about" &&
+    <div id="giscus-container">
+      <script
+        is:inline
+        src=`https://giscus.app/client.js?v=${Date.now()}`
+        data-repo="himanshubhardwaz/blog.himanshubhardwaz.com"
+        data-repo-id="R_kgDOOIW5Ag"
+        data-category="General"
+        data-category-id="DIC_kwDOOIW5As4Cohdn"
+        data-mapping="pathname"
+        data-strict="0"
+        data-reactions-enabled="1"
+        data-emit-metadata="0"
+        data-input-position="bottom"
+        data-theme="dark"
+        data-lang="en"
+        data-loading="lazy"
+        crossorigin="anonymous"
+        defer>
+      </script>
+    </div>
+  }
 </Layout>
 
 <style>
@@ -90,5 +113,14 @@ const structuredData = {
     width: 100%;
     height: auto;
     object-fit: contain;
+  }
+
+  #giscus-container {
+    margin-top: 50px;
+  }
+
+  .giscus {
+  }
+  .giscus-frame {
   }
 </style>

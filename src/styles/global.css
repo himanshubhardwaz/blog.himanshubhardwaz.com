@@ -15,12 +15,9 @@
     --text-color: #444;
     --link-color: #0062ff;
     --visited-color: #8b6fcb;
-    --code-background-color: #eee;
-    --code-color: #222;
     --blockquote-color: #222;
     --sun-color: #f5e0a2;
     --moon-color: #424f56;
-    --code-border-color: #ddd;
 }
 
 :root[data-theme="dark"] {
@@ -29,14 +26,6 @@
     --text-color: #c9d1d9;
     --link-color: #58a6ff;
     --visited-color: #a371f7;
-    --code-background-color: #161b22;
-    --code-color: #c9d1d9;
-    --blockquote-color: #8b949e;
-    --code-border-color: #30363d;
-    --shiki-dark-bg: #161b22;
-    --shiki-dark-font-style: normal;
-    --shiki-dark-font-weight: normal;
-    --shiki-dark-text-decoration: none;
 }
 
 body {
@@ -128,13 +117,6 @@ img {
     max-width: 100%;
 }
 
-blockquote {
-    border-left: 1px solid #999;
-    color: var(--code-color);
-    padding-left: 20px;
-    font-style: italic;
-}
-
 footer {
     padding: 25px 0;
     text-align: center;
@@ -153,25 +135,6 @@ footer {
 
 .inline {
     width: auto !important;
-}
-
-:not(.astro-code)>code {
-    font-family: monospace;
-    padding: 2px;
-    background-color: var(--code-background-color);
-    color: var(--code-color);
-    border-radius: 3px;
-}
-
-.highlight,
-.code {
-    padding: 1px 15px;
-    background-color: var(--code-background-color);
-    color: var(--code-color);
-    border-radius: 3px;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    overflow-x: auto;
 }
 
 /* blog post list */
@@ -220,12 +183,59 @@ html[data-theme="dark"] #sun-svg {
     display: block;
 }
 
-html[data-theme="dark"] .astro-code {
-    background-color: var(--shiki-dark-bg) !important;
+@media (prefers-color-scheme: dark) {
+    .astro-code,
+    .astro-code span {
+        color: var(--shiki-dark) !important;
+        background-color: var(--shiki-dark-bg) !important;
+        font-style: var(--shiki-dark-font-style) !important;
+        font-weight: var(--shiki-dark-font-weight) !important;
+        text-decoration: var(--shiki-dark-text-decoration) !important;
+    }
 }
 
-pre.astro-code {
-    border: 1px solid var(--code-border-color);
+:root[data-theme="dark"] .astro-code,
+:root[data-theme="dark"] .astro-code span {
+    color: var(--shiki-dark) !important;
+    background-color: var(--shiki-dark-bg) !important;
+    font-style: var(--shiki-dark-font-style) !important;
+    font-weight: var(--shiki-dark-font-weight) !important;
+    text-decoration: var(--shiki-dark-text-decoration) !important;
+}
+
+:root[data-theme="light"] .astro-code,
+:root[data-theme="light"] .astro-code span {
+    color: var(--shiki-light) !important;
+    background-color: var(--shiki-light-bg) !important;
+    font-style: var(--shiki-light-font-style) !important;
+    font-weight: var(--shiki-light-font-weight) !important;
+    text-decoration: var(--shiki-light-text-decoration) !important;
+}
+
+.astro-code {
+    margin: 1.5rem 0;
     border-radius: 6px;
-    padding: 12px;
+    padding: 1rem;
+    overflow-x: auto;
+    border: 1px solid;
+}
+
+:root[data-theme="light"] .astro-code {
+    border-color: #e1e4e8;
+}
+
+:root[data-theme="dark"] .astro-code {
+    border-color: #30363d;
+}
+
+@media (prefers-color-scheme: light) {
+    :root:not([data-theme="dark"]) .astro-code {
+        border-color: #e1e4e8;
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .astro-code {
+        border-color: #30363d;
+    }
 }

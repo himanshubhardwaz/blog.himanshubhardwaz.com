@@ -20,7 +20,7 @@ A minimalist, fast-loading blog built with Astro and MDX where I share my though
 - ✅ Responsive design
 - ✅ Light and dark theme support
 - ✅ SEO optimized with meta tags and structured data
-- ✅ RSS feed support
+- ✅ Supports RSS Feed
 - ✅ Tag-based post categorization
 
 ## Why This Blog?
